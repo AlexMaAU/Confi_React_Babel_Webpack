@@ -33,7 +33,7 @@ module.exports = {
     new CleanWebpackPlugin(), // This plugin cleans the 'dist' directory before each build.
     new HtmlWebpackPlugin({
       // This plugin generates an HTML file with the specified settings.
-      title: 'React, webpack and Babel',
+      title: 'React, Webpack and Babel',
       template: 'index.html',
       filename: 'index.html',
     }),

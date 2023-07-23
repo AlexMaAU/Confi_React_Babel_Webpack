@@ -2,8 +2,8 @@
 init npm and install webpack in local environment
 
 commands (under working directory)
-npm init -y
-npm install webpack webpack-cli --save-dev
+  npm init -y
+  npm install webpack webpack-cli --save-dev
 
 ## 2. Update package.json
 add "build": "webpack --config webpack.config.js" under "scripts"
