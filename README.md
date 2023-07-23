@@ -1,13 +1,17 @@
 ## 1. Configure Webpack
+```
 init npm and install webpack in local environment
+```
 
 commands (under working directory)
+```
 npm init -y
 npm install webpack webpack-cli --save-dev
+```
 
 ## 2. Update package.json
 add "build": "webpack --config webpack.config.js" under "scripts"
-
+```
 {
   "name": "configure-webpack-and-babel-in-react",
   "version": "1.0.0",
@@ -25,22 +29,25 @@ add "build": "webpack --config webpack.config.js" under "scripts"
     "webpack-cli": "^5.1.4"
   }
 }
+```
 
 ## 3. create src file structure
 
 ## 4. Add index.html under root directory
 
 ## 5. Configure React and Babel
-
 install React and React-Dom as dependency
+```
 npm install --save react react-dom
-
+```
 install Babel
+```
 npm install --save-dev babel-loader @babel/preset-react @babel/preset-env @babel/core @babel/plugin-proposal-class-properties
+```
 
 ## 6. Create webpack.config.js and .babelrc files under root directory，and configure babel-loader and babel options
 a. create webpack.config.js file, and configure as:
-
+```
 const path = require('path');
 module.exports = {
   entry: './src/index.js',  // start from this file, webpack will search all dependencies and pack them into one or more output files
@@ -58,10 +65,10 @@ module.exports = {
     ],
   },
 };
-
+```
 
 b. create .babelrc file and configure as:
-
+```
 {
   "presets": [
     [
@@ -84,9 +91,9 @@ b. create .babelrc file and configure as:
    // This plugin enables support for class properties proposal in JavaScript. 
   "plugins": ["@babel/plugin-proposal-class-properties"]
 }
-
+```
 ## 7. Add content to index.js
-
+```
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -98,13 +105,17 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+```
 
 ## 8. Install html-webpack-plugin and lean-webpack-plugin as dev dependency, and configure webpack.config.js
 
 install with command:
+```
 npm install --save-dev html-webpack-plugin clean-webpack-plugin
+```
 
 configure webpack.config.js:
+```
 const path = require('path');
 // add following
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -141,23 +152,31 @@ module.exports = {
     maxAssetSize: 512000,
   },
 };
+```
 
 ## 9. execute npm run build to generate dist directory
 
 ## 10. configure webpack-dev-server
 
 install with command:
+```
 npm install --save-dev webpack-dev-server
+```
 
 update package.json file：
+```
 add "start": "webpack serve -env mode" under "scripts"
+```
 
 ## 11. configure CSS and Image
 
 install with command:
+```
 npm install --save-dev css-loader style-loader
+```
 
 add configuration in webpack.config.js:
+```
 const path = require('path');
 module.exports = {
     module:{
@@ -181,3 +200,4 @@ module.exports = {
         ]
     }
 };
+```
