@@ -154,9 +154,9 @@ module.exports = {
 };
 ```
 
-## 9. execute npm run build to generate dist directory
+## 9. Execute npm run build to generate dist directory
 
-## 10. configure webpack-dev-server
+## 10. Configure webpack-dev-server
 
 install with command:
 ```
@@ -168,7 +168,7 @@ update package.json file：
 add "start": "webpack serve -env mode" under "scripts"
 ```
 
-## 11. configure CSS and Image
+## 11. Configure CSS and Image
 
 install with command:
 ```
