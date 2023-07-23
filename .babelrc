@@ -1,0 +1,23 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",  //This preset is used to enable the transformation of modern JavaScript features (ES6+) to an older version based on the specified target browsers. 
+      {
+        "targets": {
+          //  The target browsers are defined as follows
+          "edge": 17,
+          "firefox": 60,
+          "chrome": 67,
+          "safari": 11.1
+        },
+        // The "useBuiltIns" option is set to "usage," which means that Babel will only import the necessary polyfills for the specific ES6+ features that are used in the code, rather than including all polyfills.
+        "useBuiltIns": "usage"
+      }
+    ],
+    // This preset is used to enable the transformation of JSX (React's syntax extension) into regular JavaScript.
+    "@babel/preset-react"
+  ],
+   // This plugin enables support for class properties proposal in JavaScript. 
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+}
+
