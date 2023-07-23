@@ -1,3 +1,5 @@
+## Following steps shows how to configure Webpack and Babel for a React project, without using scaffold
+
 ## 1. Configure Webpack
 ```
 init npm and install webpack in local environment
