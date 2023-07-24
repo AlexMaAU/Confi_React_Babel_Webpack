@@ -6,13 +6,14 @@
       // @babel/preset-env，它能够处理尚未成为官方标准的JavaScript语法和功能。通过指定targets选项，开发者可以告诉Babel要支持哪些浏览器版本或JavaScript引擎版本。Babel会根据这些目标环境对代码进行转换，使得代码可以在这些环境中运行，即使这些环境尚未支持最新的JavaScript语法和功能。例如，如果某个浏览器版本不支持箭头函数，Babel会将箭头函数转换成普通的函数表达式，从而实现在该浏览器中运行。
       "@babel/preset-env",  //This preset is used to enable the transformation of modern JavaScript features (ES6+) to an older version based on the specified target browsers. 
       {
-        // 环境适配：在不同的浏览器、Node.js版本或其他JavaScript环境中，Babel可以根据配置调整代码，以确保代码在特定环境中的运行。
+        // 环境适配：在不同的浏览器、Node.js版本或其他JavaScript环境中，Babel可以根据配置调整代码，以确保代码在特定环境中的运行
         "targets": {
           //  The target browsers are defined as follows
           "edge": 17,
           "firefox": 60,
           "chrome": 67,
-          "safari": 11.1
+          "safari": 11.1,
+          "node": "10.13.0"
         },
         // The "useBuiltIns" option is set to "usage," which means that Babel will only import the necessary polyfills for the specific ES6+ features that are used in the code, rather than including all polyfills.
         "useBuiltIns": "usage"
