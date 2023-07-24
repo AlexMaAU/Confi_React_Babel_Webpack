@@ -203,5 +203,38 @@ module.exports = {
     }
 };
 ```
+## 12. If need to do Code Splitting, then adjust the configuration of webpack.config.js as following:
 
-Please give me a star if it helps
+1. change output to:
+```
+output: {  // configuration of output if using the optimization.splitChunks option.
+    filename: '[name].bundle.js', // Use [name] placeholder to ensure unique filename for each entry point
+    chunkFilename: '[name].chunk.js', // Use [name] placeholder to ensure unique filename for additional chunks
+    path: path.resolve(__dirname, 'dist'),
+  },
+```
+
+3. add optimization:
+```
+optimization: {
+    // 代码分割：通过Webpack的代码分割功能，可以将应用程序分割成多个小块，按需加载，从而减少首次加载时间，提高页面性能。
+    splitChunks: {
+      chunks: 'all',
+      minSize: 0,
+      maxSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
+```
+
+## Please give me a star if it helps
