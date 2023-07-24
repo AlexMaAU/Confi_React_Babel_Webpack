@@ -214,7 +214,7 @@ output: {  // configuration of output if using the optimization.splitChunks opti
   },
 ```
 
-3. add optimization:
+2. add optimization:
 ```
 optimization: {
     splitChunks: {
