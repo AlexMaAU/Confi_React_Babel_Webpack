@@ -217,7 +217,6 @@ output: {  // configuration of output if using the optimization.splitChunks opti
 3. add optimization:
 ```
 optimization: {
-    // 代码分割：通过Webpack的代码分割功能，可以将应用程序分割成多个小块，按需加载，从而减少首次加载时间，提高页面性能。
     splitChunks: {
       chunks: 'all',
       minSize: 0,
