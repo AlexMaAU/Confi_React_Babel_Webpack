@@ -203,5 +203,35 @@ module.exports = {
     }
 };
 ```
+## 12. If need to do Code Splitting, then adjust the configuration of webpack.config.js as following:
 
-Please give me a star if it helps
+1. change output to:
+```
+output: {  // configuration of output if using the optimization.splitChunks option.
+    filename: '[name].bundle.js', // Use [name] placeholder to ensure unique filename for each entry point
+    chunkFilename: '[name].chunk.js', // Use [name] placeholder to ensure unique filename for additional chunks
+    path: path.resolve(__dirname, 'dist'),
+  },
+```
+
+2. add optimization:
+```
+optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 0,
+      maxSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
+```
