@@ -235,5 +235,3 @@ optimization: {
     },
   },
 ```
-
-## Please give me a star if it helps
